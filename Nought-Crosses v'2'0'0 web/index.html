@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css\bootstrap.min.css">
+  <link rel="stylesheet" href="css\main.css">
+  <link rel="icon" href="images/glypht.png">
+  <title>Noughts and Crosses</title>
+  <script src="js/create.js"></script>
+  <script src="js/play.js"></script>
+  <script lang="js">
+    window.onload = function () {
+      let button = document.getElementById("create");
+      let del = 0
+      button.onclick = function () {
+        whatsSquare(whatsField());
+      }
+      let buttonHowPlay = document.getElementById("how_play");
+      buttonHowPlay.onclick = function () {
+        del += 1
+        let buttonsDiv = document.getElementById("how_play_div")
+        description(del, buttonsDiv)
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <a href="index.html"><img src="images/icon.png" id="icon"></a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-auto pass">
+        <lable>Выберите поле:</lable>
+      </div>
+      <div class="col-sm-auto pass"><select id="select_size" required>
+        <option value="3x3">классическое (3x3)</option>
+        <option value="19x19">бесконечное (19x19)</option>
+      </select>
+    </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-auto pass"><input id="create" class="button" type="button" value="Создать поле"></div>
+      <div id="how_play_div" class="col-sm">
+        <input id="how_play" class="button pass" type="button" value="Как играть?">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div id="move" class="row pass">
+    </div>
+  </div>
+  <div id="play_aktivity" class="container">
+    <div id="div_friends" class="row">
+    </div>
+    <div id="field" class="row">
+    </div>
+    <div id="new_game_target" class="row">
+    </div>
+  </div>
+  <div id="footer" class="container">
+    <div id="my" class="none_margin row">
+      <div class="footer_elements col-sm">© 2021 <a href="https://github.com/AParovyshnaya">AParovyshnaya</a> (aka
+        vovremya)
+      </div>
+      <div class="footer_elements col-sm"><a href="https://github.com/AParovyshnaya/Noughts-Crosses"><img
+            src="images/github.svg" id="github_icon"></a></div>
+      <div class="footer_elements col-sm"><a href="https://spdx.org/licenses/Apache-2.0.html">Лицензия</a></div>
+      <div class="footer_elements col-sm"><a href="https://github.com/AParovyshnaya/Noughts-Crosses/issues/new">Ошибка
+          или
+          пожелание?</a></div>
+      <div class="footer_elements col-sm"><a href="https://fonts.google.com/specimen/Open+Sans#about">Шрифт сделан
+          Стивом
+          Матессоном</a></div>
+    </div>
+  </div>
+</body>
+
+</html>
